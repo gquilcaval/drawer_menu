@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.serviceandroid.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.serviceandroid.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_detailSecondFragment"
+            app:destination="@id/detailSecondFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/thredFragment"
+        android:name="com.example.serviceandroid.ThredFragment"
+        android:label="fragment_thred"
+        tools:layout="@layout/fragment_thred" >
+        <action
+            android:id="@+id/action_thredFragment_to_detailRecepcionFragment"
+            app:destination="@id/detailRecepcionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailRecepcionFragment"
+        android:name="com.example.serviceandroid.DetailRecepcionFragment"
+        android:label="fragment_detail_recepcion"
+        tools:layout="@layout/fragment_detail_recepcion" />
+    <fragment
+        android:id="@+id/detailSecondFragment"
+        android:name="com.example.serviceandroid.DetailSecondFragment"
+        android:label="fragment_detail_second"
+        tools:layout="@layout/fragment_detail_second" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.serviceandroid.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_thredFragment"
+            app:destination="@id/thredFragment" />
+    </fragment>
+</navigation>
