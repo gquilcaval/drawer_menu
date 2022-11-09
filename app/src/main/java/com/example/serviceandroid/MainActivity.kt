@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    val fm = supportFragmentManager
+
     private var numero = 0
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,14 +72,9 @@ class MainActivity : AppCompatActivity() {
 
         )
 
-
-
         //Toolbar
         setSupportActionBar(binding.topAppBar)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        // DrawerLayout
-        //binding.navigationView.setupWithNavController(navController)
 
 
         binding.navigationView.setNavigationItemSelectedListener {
@@ -101,28 +96,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
-    private fun replace(fragment: Fragment) {
-        val manager = supportFragmentManager.beginTransaction()
-        manager.replace(R.id.fragmentContainerView, fragment)
-        manager.commit()
-    }
-
+    
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.fragmentContainerView).navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return item.onNavDestinationSelected(findNavController(R.id.fragmentContainerView))
-                || super.onOptionsItemSelected(item)
-    }
-
-
-
-
-
-
-
 
     override fun onDestroy() {
         super.onDestroy()
